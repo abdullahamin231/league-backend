@@ -26,15 +26,16 @@
   var app = express();
 
 
-  app.options('*', cors({
-    origin: 'https://premierleaguestatistics.netlify.app',
-    methods: ['GET', 'POST'], // Specify the methods allowed
-    allowedHeaders: ['Content-Type', 'Authorization'], // Specify the headers allowed
-  }));
+  const corsOptions = { 
+    origin:'https://premierleaguestatistics.netlify.app',
+    AccessControlAllowOrigin: '*',  
+    methods: 'GET,POST' 
+  }
+  app.use(cors(corsOptions))
 
-  app.use(cors({
-    origin: ["https://premierleaguestatistics.netlify.app"]
-  }));
+  // app.use(cors({
+  //   origin: ["https://premierleaguestatistics.netlify.app"]
+  // }));
 
 
   // view engine setup
