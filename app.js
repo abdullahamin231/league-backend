@@ -27,10 +27,11 @@
 
 
   const corsOptions = { 
-    origin:'https://premierleaguestatistics.netlify.app',
-    AccessControlAllowOrigin: '*',  
-    methods: 'GET,POST' 
-  }
+    origin: 'https://premierleaguestatistics.netlify.app',
+    'Access-Control-Allow-Origin': 'https://premierleaguestatistics.netlify.app',
+    methods: 'GET, POST',
+    optionsSuccessStatus: 204 // Some legacy browsers choke on 204
+};
   app.use(cors(corsOptions))
 
   // app.use(cors({
