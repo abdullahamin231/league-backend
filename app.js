@@ -1,5 +1,4 @@
-import 'dotenv/config'
-console.log(process.env) // remove this after you've confirmed it is working
+require('dotenv').config();
 
 var createError = require('http-errors');
 var express = require('express');
@@ -16,7 +15,7 @@ var squadRouter = require('./routes/squads.js')
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = process.end.MONGODBURL
+const mongoDB = process.env.MONGODBURL
 main().catch((err) => console.log(err));
 async function main() {
   console.log("connecting to database");
