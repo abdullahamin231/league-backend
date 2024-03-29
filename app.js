@@ -25,7 +25,9 @@ async function main() {
 
 var app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://premierleaguestatistics.netlify.app"]
+}));
 
 
 // view engine setup
